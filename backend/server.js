@@ -1,17 +1,16 @@
 const express = require ("express");
 
 const {
-  readTeachers,
-  readStudents,
-  addStudent,
-  addTeacher,
-  deleteTeacher,
-  deleteStudent,
-  readStudentInfo,
-  readTeacherInfo,
-  updateStudent,
-  updateTeacher,
-  dbinitialize
+    readTeachers,
+    readStudents,
+    addStudent,
+    addTeacher,
+    deleteTeacher,
+    deleteStudent,
+    readStudentInfo,
+    readTeacherInfo,
+    updateStudent,
+    updateTeacher
 } = require ("./database.js");
 
 const app = express();
