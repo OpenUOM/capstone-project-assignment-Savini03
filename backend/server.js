@@ -37,7 +37,7 @@ app.get("/listTeachers", async function (req, res) {
 
 app.post("/addTeacherInfo", async function (req, res) {
   let reqBody = req.body;
-  console.log("Request received to add Teacher Info");
+  console.log("Request received to get Teacher Info");
   let data = await readTeacherInfo(reqBody.id);
 
   res.setHeader("Content-Type", "application/json");
