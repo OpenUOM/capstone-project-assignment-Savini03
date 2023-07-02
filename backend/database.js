@@ -93,7 +93,7 @@ const deleteTeacher = async (id) => {
 }
 
 const readStudents = async () => {
-    const sql = `SELECT * FROM student`
+    const sql = `SELECT * FROM dummydata`
     return new Promise((resolve, reject) => {
         knex_db
             .raw(sql)
