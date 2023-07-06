@@ -16,6 +16,8 @@ function init(db) {
     _db = db;
 }
 
+const knex_db = require("./db-config");
+
 const readTeachers = async () => {
     const sql = `SELECT * FROM teacher`
     return new Promise((resolve, reject) => {
