@@ -159,10 +159,15 @@ const deleteStudent = async (id) => {
 }
 
 module.exports = {
+    readTeachers,
     readStudents,
     addStudent,
+    addTeacher,
+    deleteTeacher,
     deleteStudent,
     readStudentInfo,
-    updateStudent
+    readTeacherInfo,
+    updateStudent,
+    updateTeacher
     
 };
