@@ -18,6 +18,10 @@ function init(db) {
 
 const knex_db = require("./db-config");
 
+const dbinitialize = async () => {
+    testBase.resetDatabase(knex_db);
+}
+
 const readTeachers = async () => {
     const sql = `SELECT * FROM teacher`
     return new Promise((resolve, reject) => {
@@ -116,7 +120,7 @@ const readStudentInfo = async (id) => {
     });
 }
 
-const addStudent = async (id, name, age, religion) => {
+const addStudent = async (id, name, age) => {
     const sql = `INSERT INTO student(id,name,age) value(?,?,?)`
     return new Promise((resolve, reject) => {
         knex_db
@@ -130,7 +134,7 @@ const addStudent = async (id, name, age, religion) => {
     });
 }
 
-const updateStudent = async (name, age, religion, id) => {
+const updateStudent = async (name, age, id) => {
     const sql = `UPDATE student SET name=?,age=? WHERE id=?`
     return new Promise((resolve, reject) => {
         knex_db
@@ -169,5 +173,4 @@ module.exports = {
     readTeacherInfo,
     updateStudent,
     updateTeacher
-    
 };
