@@ -1,16 +1,13 @@
 const express = require ("express");
 
 const {
-    readTeachers,
+    initializeDatabase,
     readStudents,
     addStudent,
-    addTeacher,
-    deleteTeacher,
     deleteStudent,
     readStudentInfo,
-    readTeacherInfo,
-    updateStudent,
-    updateTeacher
+    updateStudent
+    
 } = require ("./database.js");
 
 const app = express();
@@ -35,7 +32,7 @@ app.get("/listTeachers", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
-app.post("/addTeacherInfo", async function (req, res) {
+app.post("/getTeacherInfo", async function (req, res) {
   let reqBody = req.body;
   console.log("Request received to get Teacher Info");
   let data = await readTeacherInfo(reqBody.id);
@@ -61,7 +58,6 @@ app.post("/editTeacher", async function (req, res) {
     "Request received to update teacher. Req body: " + JSON.stringify(reqBody)
   );
   let data = await updateTeacher(reqBody.name,reqBody.age,reqBody.id);
-
 
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(data));
