@@ -18,10 +18,6 @@ export class AppServiceService {
     }
   }
 
-  initializeDB(){
-    return this.http.get(`/api/dbinitialize`)
-  }
-
   getTeacherData(){
     return this.http.get(`/api/listTeachers`)
   }
