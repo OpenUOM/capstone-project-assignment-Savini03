@@ -10,8 +10,8 @@ const {
   readStudentInfo,
   readTeacherInfo,
   updateStudent,
-  updateTeacher
-    
+  updateTeacher,
+  dbinitialize
 } = require ("./database.js");
 
 const app = express();
